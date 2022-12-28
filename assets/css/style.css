@@ -1,0 +1,807 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    text-decoration: none;
+    color: inherit;
+    list-style: none;
+}
+body{
+    display: grid;
+    grid-template-columns: 1fr, 1fr, 1fr, 1fr;
+    grid-template-rows: 1fr, 1fr, 1fr, 1fr; 
+    grid-template-areas: "nav nav nav nav"
+                        "header header header header"
+                        "main main main main"
+                        "footer footer footer footer";
+    background-color: black;
+    font-family: Kanit, sans-serif;
+}
+nav{
+    grid-area: nav;
+}
+.navindex{
+    display: flex;
+    justify-content:space-between;
+    width: 100%;
+    background-color: black;
+    font-size: 24px;
+    font-family: Kanit, sans-serif;
+    align-content: center;
+}
+.logoindex{
+    max-height: 23px;
+    align-self: center;
+    margin-right: 40px;
+}
+
+.navindex > .fa-bars{
+    color: white;
+    display: none;
+}
+.navindex > .fa-magnifying-glass{
+    display: none;
+}
+.menu_horizontal{
+    list-style: none;
+    display: flex;
+    justify-content: end;
+}
+.menu_horizontal > li > a{
+    display: block;
+    padding: 25px 30px;
+    color: white;
+    text-decoration: none;
+}
+.menu_horizontal > li:hover{
+    background-color: #AC39F3;
+    margin: 4px;
+    transition: 0.3s;
+    border-radius: 30px;
+}
+.menu_vertical{
+    position: absolute;
+    margin-top: 2px;
+    display: none;
+    list-style: none;
+    width: 180px;
+    background-color: #4F2C64;
+    border-radius: 8px;
+}
+.menu_horizontal li:hover .menu_vertical{
+    display: block;
+    transition: 0.5s;
+}
+.menu_vertical li:hover{
+    background-color: #AC39F3;
+}
+.menu_vertical li a{
+    display: block;
+    color: white;
+    padding: 15px 15px 15px 20px;
+    text-decoration: none;
+    transition: 0.5s;
+}
+@media (max-width:984px){
+    .navindex > .fa-bars{
+        color: white;
+        font-size: 30px;
+        display: block;
+        padding: 20px;
+    }
+    .navindex > .fa-bars:hover + ul{
+        left: 0;
+    }
+    .navindex > ul:hover{
+        left: 0;
+    }
+    .navindex > .fa-magnifying-glass{
+        color: white;
+        font-size: 30px;
+        display: block;
+        padding: 20px;
+    }
+    .navindex > ul {
+        position: fixed;
+        flex-direction: column;
+        background-color: black;
+        width: 300px;
+        height: 100vh;
+        justify-content: start;
+        padding-top: 60px;
+        left: -300px;
+        transition: 0.2s;
+    }
+    .logoindex{
+        position: static;
+        align-content: center;
+        margin-right: 0px;
+    }
+}
+.category_active{
+    font-weight: bolder;
+}
+/*HEADER*/
+header{
+    grid-area: header;
+}
+.cover{
+    width: 100%;
+    height: 1000px;
+    background-image: url(../img/portada.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+@media (max-width:1000px){
+    .cover{
+        background-size:contain;
+        height: 600px;
+    }  
+}
+@media (max-width:576px){
+    .cover{
+        background-size:contain;
+        background-repeat: no-repeat;
+        height: 300px;
+    }  
+}
+
+/*Main*/
+main{
+    grid-area: main;
+    display: block;
+}
+.img_main{
+    width: 100%;
+    height: 1000px;
+    background-image: url(../img/gifjim1.gif);
+    background-size: cover;
+}
+main > h1{
+    color: white;
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+    font-size: 100px;
+    margin-top: 20px;
+}
+main > h2{
+    color: white;
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+    font-size: 60px;
+    margin-top: 20px;
+}
+@media (max-width:1100px){
+    .img_main{
+        background-size:contain;
+        background-repeat: no-repeat;
+        height: 800px;
+    }  
+    main > h1{
+        font-size: 60px;
+    }
+    main > h2{
+        font-size: 40px;
+    }
+}
+@media (max-width:700px){
+    .img_main{
+        background-size: contain;
+        background-repeat: no-repeat;
+        height: 400px;
+    }
+    main > h1{
+        font-size: 40px;
+    }
+    main > h2{
+        font-size: 25px;
+    }
+}
+/*Values*/
+.values{
+    padding-top: 50px;
+    padding-bottom: 50px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    margin-bottom: 40px;
+}
+.index__card{
+    background-color: black;
+    display:flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+    width: 300px;
+    border: solid 1px #AC39F3;
+    border-radius: 8px;
+    padding: 30px;
+    gap: 10px;
+
+}
+.card__img{
+    padding-left: 50px;
+    padding-right: 50px;
+    display: flex;
+    justify-content: center;
+    align-self: center;
+}
+
+.card__title{
+    font-family: 'Kanit', sans-serif;
+    font-size: 30px;
+    font-weight: bolder;
+    color: rgb(135, 72, 141);
+    align-self: center;
+
+}
+.card__text{
+    font-family: 'Kanit', sans-serif;
+    color: rgb(143, 143, 143);
+    font-size: 20px;
+    align-items: center;
+    text-align: center;
+}
+/*Footer*/
+footer{
+    grid-area: footer;
+    background-color: black;
+    color: white;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 0px 20px 0px;
+    font-family: Kanit, sans-serif;
+    border-top: 1px solid rgb(95, 95, 95);
+}
+footer > .company_data{
+    margin: 10px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+footer > .company_data > h2, p, .socialmedia, .socialmedia{
+    display: flex;
+    justify-content: center;
+}
+.socialmedia{
+    gap: 10px;
+}
+
+footer > .f_info{
+    display: flex;
+    width: 70%;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+footer > .f_info > .moreinfo{
+    margin: 20px;
+}
+footer > .f_info > .moreinfo > h3{
+    margin: 10px 0px;
+    display: flex;
+    justify-content: center;
+}
+footer > .f_info > .moreinfo > ul{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.footer_top{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.footer_logoindex{
+    display: flex;
+    justify-content: center;
+    align-self: center;
+}
+@media (max-width:986){
+    footer > .company_data > p{
+        justify-self: center;
+    }
+    footer > .f_info{
+        width: 100%;
+    }
+}
+/*Products*/
+.products_cover{
+    background-image: url(../img/galaxia.jpg);
+    background-size: cover;
+    width: 100%;
+    height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.products_cover > h1{
+    color: white;
+    display: flex;
+    flex-wrap: wrap;
+    font-size: 80px;
+    text-align: center;
+}
+@media (max-width:1100px){
+    .products_cover{
+        background-size:cover;
+    }  
+    main > h1{
+        font-size: 60px;
+    }
+    main > h2{
+        font-size: 40px;
+    }
+}
+@media (max-width:700px){
+    .img_main{
+        background-size: contain;
+        background-repeat: no-repeat;
+        height: 400px;
+    }
+    main > h1{
+        font-size: 40px;
+    }
+    main > h2{
+        font-size: 25px;
+    }
+}
+/*Main product*/
+.products_father{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    margin: auto;
+}
+.tablet1{
+    background-color:#1D1D1D;
+    margin-bottom: 100px;
+    margin-top: 120px;
+    margin: auto;
+    padding: 60px;
+    border-radius: 20px;    
+    gap: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
+    gap: 20px;
+    width: 1200px;
+}
+.tablet1__img{
+    background-image: url(../img/tablet1.png);
+    width: 800px;
+    height: 700px;
+    background-size: cover;
+}
+.tablet1__text{
+    color: rgb(223, 223, 223);
+    font-size: 18px;
+    font-family: 'Kanit', sans-serif;
+    font-weight: lighter;
+    display: flex;
+    flex-direction: column;
+}
+.tablet1__card__price{
+    font-family: 'Kanit', sans-serif;
+    font-size: 40px;
+    font-weight: bold;
+    color: white;
+    justify-self: start;
+}
+.tablet1__boton {
+    padding: 20px;
+    width: 300px;
+    background-color: #AC39F3;
+    border-style: none;
+    border-radius: 4px;
+    font-family: 'Kanit', sans-serif;
+    font-size: 24px;
+    font-weight:bolder;
+}
+@media  (max-width:1100px){
+    .tablet1{
+        display: block;
+        max-width: 700px;
+    }  
+    .tablet1__img{
+        width: 400px;
+        height: 250px;
+    }
+}
+@media (max-width:700px){
+    .tablet1{
+
+        display: block;
+        max-width: 300px;
+        height: 400px;
+    }  
+
+    .tablet1__img{
+        background-size: contain;
+        background-repeat: no-repeat;
+        width: 400px;
+        height: 250px;
+    }
+}
+/*Accesories*/
+.products2{
+    padding-top: 50px;
+    padding-bottom: 50px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    gap: 10px;
+}
+.products2__card{
+    background-color: rgb(41, 41, 41);
+    display:block;
+    width: 300px;
+    border-radius: 8px;
+    padding-top: 30px;
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-bottom: 30px;
+}
+.products2__card__img{
+    width: 80%;
+    border-radius: 10px;
+    padding-left: 30px;
+    padding-right: 30px;
+    align-self: center;
+}
+.products2__card__title{
+    font-family: 'Kanit', sans-serif;
+    font-size: 30px;
+    font-weight: lighter;
+    color: white;
+}
+.products2__card__text{
+    font-family: 'Kanit', sans-serif;
+    color: rgb(143, 143, 143);
+    font-size: 20px;
+    align-items: center;
+}
+.products2__card__price{
+    font-family: 'Kanit', sans-serif;
+    font-size: 30px;
+    font-weight: bold;
+    color: white;
+}
+.products2__boton {
+    padding: 10px;
+    margin-top: 20px;
+    width: 300px;
+    background-color: rgb(150, 38, 255);
+    border-style: none;
+    border-radius: 4px;
+    font-family: 'Kanit', sans-serif;
+    font-size: 24px;
+    font-weight:bolder;
+}
+/*CONTACT*/
+/*Corporate adress*/
+.callcenter{
+    background-color:#1D1D1D;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    background-color:#1D1D1D ;
+    border-radius: 10px;
+    padding: 60px;
+    max-width: 1200px;
+    margin: auto;
+    margin-bottom: 40px;
+    gap: 20px;
+}
+.callcenter_text{
+    color: white;
+    font-size: 20px;
+    font-weight: lighter;
+}
+.callcenter_img{
+    background-image: url(../img/callcenter.jpg);
+    width: 1200px;
+    height: 600px;
+    background-size: cover;
+
+}
+.callcenter > h2{
+    color: white;
+    font-size: 40px;
+    text-align: center;
+}
+@media (max-width:1100px){
+    .callcenter_img{
+        background-size:contain;
+        background-repeat: no-repeat;
+        max-width: 600px;
+        height: 240px;
+    }  
+    .callcenter_text{
+        max-width: 600px;
+    }
+}
+.corporate{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    background-color:#1D1D1D ;
+    border-radius: 10px;
+    padding: 60px;
+    max-width: 1200px;
+    margin: auto;
+    margin-bottom: 40px;
+
+}
+.corporate__adress{
+    max-width: 1200px;
+    margin: auto;
+    margin-bottom: 40px;
+    border-radius: 10px;
+    display: grid;
+    gap: 10px;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
+    grid-template-areas: "corporate__map  corporate__map";
+}
+.corporate__map > h2{
+    color: white;
+    font-size: 30px;
+    margin-bottom: 30px;
+}
+.corporate__map:nth-child(1){
+    grid-area: corporate__map;
+    max-width: 1200px;
+    justify-items: center;
+    padding-bottom: 10px;
+}
+.corporate__text:nth-child(2){
+    grid-area: corporate__text;
+    color: white;
+    font-size: 18px;
+    font-family: 'Kanit', sans-serif;
+    font-weight: lighter;
+    max-width: 1200px;
+    text-align: start;
+}
+.map{
+    width: 100%;
+    max-width: 1200px;
+    height: 400px;
+    border-style: none;
+    padding-right: 20px;
+}
+/*Formulario*/
+.form_contact{
+    padding: 60px;
+    background-color: #1D1D1D;
+    max-width: 1200px;
+    margin: 10px auto;
+    margin-bottom: 40px;
+    border-radius: 10px;
+    display: grid;
+    gap: 10px;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 80px;
+    grid-template-areas: "titulo   titulo"
+                         "nomApell email"
+                         "tel      asunto"
+                         "mensaje  mensaje"
+                         "...      btn";
+                         
+
+}
+@media(max-width:700px){
+    .form_contact{
+        border-radius: 0;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 80px;
+        grid-template-areas: "titulo"
+                             "nomApell" 
+                             "email"
+                             "tel"      
+                             "asunto"
+                             "mensaje"  
+                             "btn"
+                             ;
+    
+    }
+}
+.form_contact h2:nth-child(1){
+    grid-area: titulo;
+    color: white;
+    font-size: 30px;
+}
+
+.form_contact label:nth-child(2){
+    grid-area: nomApell;
+}
+
+.form_contact label:nth-child(3){
+    grid-area: email;
+}
+
+.form_contact label:nth-child(4){
+    grid-area: tel;
+}
+.form_contact label:nth-child(5){
+    grid-area: asunto;
+}
+.form_contact label:nth-child(6){
+    grid-area: mensaje;
+}
+.form_contact button:nth-child(7){
+    grid-area: btn;
+    background-color: #AC39F3;
+    border: 0;
+    color: white;
+    border-radius: 5px;
+    font-size: 20px;
+    margin-top: 40px;
+    font-family: Kanit, sans-serif;
+    justify-content: center;
+    max-width: 500px;
+
+}
+.form_contact > label{
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    gap: 10px;
+    color: white;
+}
+
+.form_contact > label > input , .formulario > label >textarea {
+    background-color: white;
+    border: 0;
+}
+.form_contact > label > input{
+    padding-left: 10px;
+    color: black;
+    border-radius: 4px;
+    font-family: 'Quicksand', sans-serif;
+    height: 40px;
+    max-width: 550px;
+}
+.form_contact > label > textarea{
+    height: 60px;
+    width: 100%;
+    max-width: 1150px;
+    border-radius: 4px;
+}
+/*SUPPORT*/
+.support_cover{
+    background-image: url(../img/support1.png);
+    width: 100%;
+    height: 600px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 60px;
+}
+@media (max-width:1000px){
+    .support_cover{
+        background-size:contain;
+        height: 600px;
+    }  
+}
+@media (max-width:576px){
+    .support_cover{
+        background-size:contain;
+        background-repeat: no-repeat;
+        height: 300px;
+    }  
+}
+.support_section1{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: center;
+    background-color:#1D1D1D ;
+    border-radius: 10px;
+    padding: 60px;
+    max-width: 1400px;
+    margin: auto;
+    margin-bottom: 40px;
+    gap: 20px;
+}
+.support_section1_text{
+    color: white;
+    font-size: 20px;
+    font-weight: lighter;
+}
+.support_section1 > h2{
+    color: white;
+    font-size: 50px;
+    margin-bottom: 30px;
+    text-align: center;
+}
+.support_section1_img{
+    background-image: url(../img/teamwork.jpg);
+    width: 1000px;
+    height: 600px;
+    align-self: center;
+}
+@media (max-width:1000px){
+    .support_section1_img{
+        background-size:contain;
+        background-repeat: no-repeat;
+        width: 800px;
+        height: 600px;
+    }  
+}
+@media (max-width:700px){
+    .support_section1_img{
+        background-size:contain;
+        background-repeat: no-repeat;
+        width:500px;
+        height: 300px;
+    }  
+}
+/*FAQ*/
+.support_faq{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: center;
+    background-color:#1D1D1D ;
+    border-radius: 10px;
+    padding: 60px;
+    max-width: 1400px;
+    margin: auto;
+    margin-bottom: 40px;
+    gap: 20px;
+    color: white;
+}
+.support_faq > h2{
+        color: white;
+        font-size: 40px;
+        margin-bottom: 30px;
+        text-align: start;
+}
+.support_faq> ul > li{
+    color: white;
+    align-self: center;
+    gap: 40px;
+
+}
+/*ABOUT*/
+/*Nav*/
+.navbar-brand{
+    display: block;
+    align-self: center;
+    padding-left: 20px;
+    padding-right: 60px;
+
+}
+main{
+    background-color: black;
+}
+.about1{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 50px;
+}
+.about1 >h3{
+    color: white;
+    font-size: 40px;
+    margin-bottom: 30px;
+    text-align: center;
+    margin-bottom: 100px;
+    margin-top: 100px;
+}
+body{
+    background-color: black;
+}
