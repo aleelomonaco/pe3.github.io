@@ -6,10 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Products</title>
     <link rel="stylesheet" href="../assets/css/style.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link href="https://fonts.googleapis.com/css2?family=Kanit&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400&display=swap" rel="stylesheet">
 </head>
+<!--Page made with Flexbox-->
 <body class="body_products">
     <nav class="navindex">
         <i class="fa-solid fa-bars"></i>
@@ -35,37 +37,38 @@
         <i class="fa-solid fa-magnifying-glass"></i>
     </nav>
     <header>
-        <div class="products_cover"><H1>MEET OUR PRODUCTS</H1></div> 
+        <div class="products_cover"><H1 data-aos="fade-down">MEET OUR PRODUCTS</H1></div> 
     </header>
     <main>  
         <section class="products_father">
-            <section class="tablet1">
+            <section class="tablet1" data-aos="fade-left">
                 <div class="tablet1__content">
+                    <div class="tablet1__title"><h3>PYRAMID CLASSIC P99</h3></div>
                     <div class="tablet1__img"></div>
-                    <div class="tablet1__text">
+                    <div class="tablet1__text"><br>
                         <p>Lorem ipsum dolor sit amet.
                         </p>   
                         <p class="tablet1__card__price">$XXXX.</p><br>
-                        <button class="tablet1__boton">ADD TO CART</button>
                     </div>
+                    <div class="tablet1__boton__div"><button class="tablet1__boton">ADD TO CART</button></div>
                 </div>
             </section>
             <section class="products2">
-                <div class="products2__card">
+                <div class="products2__card" data-aos="zoom-in">
                     <img  class="products2__card__img" src="../assets/img/blueheadph.png">
                     <h3 class="products2__card__title">HEADPHONES 1</h3>
                     <p class="products2__card__text">Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p><br>
                     <p class="products2__card__price">$XXXX.</p>
                     <button class="products2__boton">ADD TO CART</button>
                 </div>
-                <div class="products2__card">
+                <div class="products2__card" data-aos="zoom-in" >
                     <img  class="products2__card__img" src="../assets/img/whiteheadph.png">
                     <h3 class="products2__card__title">HEADPHONES 2</h3>
                     <p class="products2__card__text">Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p><br>
                     <p class="products2__card__price">$XXXX.</p>
                     <button class="products2__boton">ADD TO CART</button>
                 </div>
-                <div class="products2__card">
+                <div class="products2__card"  data-aos="zoom-in">
                     <img  class="products2__card__img" src="../assets/img/pinkheadph.png">
                     <h3 class="products2__card__title">HEADPHONES 3</h3>
                     <p class="products2__card__text">Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p><br>
@@ -124,5 +127,8 @@
                     </div>
         </div>
     </footer>
+    <!--AOS-->
+        <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+        <script> AOS.init({once: true,duration: 1000});</script>
 </body>
 </html>
