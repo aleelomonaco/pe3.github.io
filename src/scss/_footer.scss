@@ -1,0 +1,67 @@
+footer{
+    grid-area: footer;
+    background-color: $colorPrincipal;
+    color: $color1;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 0px 20px 0px;
+    font-family: Kanit, sans-serif;
+    border-top: 1px solid $colorSecundario;
+    > .company_data{
+        margin: 10px;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 20px;
+        > h2, p, .socialmedia, .socialmedia{
+            display: flex;
+            justify-content: center;
+        }
+        .footer_top{
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+    }
+    .socialmedia{
+    gap: 10px;
+    }
+    .f_info{
+        display: flex;
+        width: 70%;
+        flex-wrap: wrap;
+        justify-content: space-around;
+            > .moreinfo{
+                margin: 20px;
+                > h3{
+                    margin: 10px 0px;
+                    display: flex;
+                    justify-content: center;
+                }
+                > ul{
+                    display: flex;
+                    flex-direction: column;
+                    gap: 10px;
+                }
+            }
+    }
+    .footer_logoindex{
+            display: flex;
+            justify-content: center;
+            align-self: center;
+        }
+    @media (max-width:986){
+        footer > .company_data > p{
+            justify-self: center;
+        }
+        footer > .f_info{
+            width: 100%;
+        }
+    }
+}
+
+

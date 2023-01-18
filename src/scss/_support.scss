@@ -1,0 +1,101 @@
+.support__portada{
+    height: 500px;
+    background-size: cover;
+    background-image:url(../img/support1.png);
+    @media(max-width:900px){
+        max-height: 300px;
+    }
+
+}
+.support__team{
+    @extend %content;
+    > h2{
+        @extend %h2;
+    }
+    > .support__content{
+        display:flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        width: 100%;
+        max-width: 1400px;
+        display: flex;
+        align-content: center;
+        justify-content: center;
+            > .support__img img{
+            width: 100%;
+            }
+            > .support__text{
+                color: $color1;
+                font-size: 30px;
+                font-family: 'Kanit', sans-serif;
+                font-weight: lighter;
+                width: 100%;
+                text-align: left;
+                padding-top: 20px;
+            }
+
+    }
+@media(max-width:900px){
+            margin: 20px;
+            padding: 20px;
+        p{
+            font-size: 80%;
+        }
+        h2{
+            font-size: 24px;
+        }
+    }
+}
+
+/*CommonQuestions*/
+.faq{
+    background-color: $colorSecundario;
+    max-width: 1400px;
+    padding-bottom: 20px;
+    padding-top: 20px;
+    margin: auto;
+    margin-bottom: 100px;
+    border-radius: 20px;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    >.faq__content{
+        @extend %content;
+        > h2{
+            @extend %h2;
+        }
+        >.faq__text{
+            margin: auto;
+            color: $color1;
+            font-size: 20px;
+            font-family: 'Kanit', sans-serif;
+            font-weight: lighter;
+            text-align: left;
+            > ul > li{
+                padding: 10px;
+                .fa-question-circle{
+                    color: $colorTerciario;
+                    font-size: larger;
+                    padding-right: 10px;
+                }
+            }
+        }
+        @media(max-width:900px){
+            margin: 0px;
+            padding: 20px;
+            h2{
+                font-size: 24px;
+                }
+            ul{
+                font-size: 80%;
+                }
+            .faq__text{
+                margin: 0px;
+                padding: 0px;
+                }
+        } 
+    }
+@media(max-width:900px){
+    margin: 20px;
+    }
+}

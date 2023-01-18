@@ -1,0 +1,198 @@
+.products_cover{
+    background-image: url(../img/galaxia.jpg);
+    background-size: cover;
+    width: 100%;
+    height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    > h1{
+        color: $color1;
+        display: flex;
+        flex-wrap: wrap;
+        font-size: 80px;
+        text-align: center;
+    }
+    @media (max-width:1100px){
+        .products_cover{
+            background-size:cover;
+        }  
+        h1{
+            font-size: 60px;
+        }
+        h2{
+            font-size: 40px;
+        }
+    }
+    @media (max-width:700px){
+        .img_main{
+            background-size: contain;
+            background-repeat: no-repeat;
+            height: 400px;
+        }
+        h1{
+            font-size: 40px;
+        }
+        h2{
+            font-size: 25px;
+        }
+    }
+}
+/*Main product*/
+.products_father{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    margin: auto;   
+    > .tablet1{
+        background-color:$colorSecundario;
+        margin-bottom: 100px;
+        margin-top: 120px;
+        margin: auto;
+        padding: 60px;
+        border-radius: 20px;    
+        gap: 20px;
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+        justify-content: center;
+        gap: 20px;
+        width: 1400px;
+        h3{
+            color: $color1;
+            font-size: 50px;
+            margin-bottom: 10px;
+            justify-self: center;
+            }
+        >.tablet1__content{
+            background-color: $colorSecundario;
+            > .tablet1__img{
+                background-image: url(../img/tablet1.png);
+                width: 700px;
+                height: 700px;
+                background-size: cover;
+                @media  (max-width:1100px){
+                        width: 400px;
+                        height: 400px;
+                        margin: auto;
+                    }
+                @media (max-width:700px){
+                        background-size: contain;
+                        background-repeat: no-repeat;
+                        width: 300px;
+                        height: 300px;
+                    }
+                }
+            > .tablet1__title{
+                display: flex;
+                justify-content: center;
+            }
+            > .tablet1__text{
+                color: $color1;
+                font-size: 18px;
+                font-family: 'Kanit', sans-serif;
+                font-weight: lighter;
+                > p {
+                    font-size: 30px;
+                }
+                > .tablet1__card__price{
+                font-family: 'Kanit', sans-serif;
+                font-size: 40px;
+                font-weight: bold;
+                color: $color1;
+                justify-self: start;
+                }
+            }
+            > .tablet1__boton__div{
+                display: flex;
+                justify-content: center;
+                > .tablet1__boton {
+                    @include button (100%,$colorPrincipal);
+                }
+            }
+        }
+    }
+    @media  (max-width:1100px){
+    .tablet1{
+        display: block;
+        max-width: 700px;
+    }  
+    .tablet1 > h1{
+        font-size: 60px;
+    }
+    .products_cover > h1{
+        font-size: 60px;
+    }
+}
+    @media (max-width:700px){
+    .tablet1{
+        display: block;
+        max-width: 300px;
+        height: 650px;
+        padding: 30px;
+    }  
+    .tablet1__title h3{
+        font-size: 30px;
+    }
+    .tablet1__text > p{
+        font-size: 20px;
+    }
+
+}
+}
+/*Accesories*/
+.products2{
+    padding-top: 50px;
+    padding-bottom: 50px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    gap: 10px;
+    .products2__card{
+            @include card($colorSecundario);
+            > .products2__card__img{
+                width: 80%;
+                border-radius: 10px;
+                padding-left: 24px;
+                padding-right: 24px;
+                justify-self: center;
+                align-self: center;
+            }
+            > .products2__card__title{
+                font-family: 'Kanit', sans-serif;
+                font-size: 30px;
+                font-weight: lighter;
+                color: $color1;
+                padding-top: 10px;
+            }
+            > .products2__card__text{
+                font-family: 'Kanit', sans-serif;
+                color: rgb(143, 143, 143);
+                font-size: 20px;
+                align-items: center;
+            }
+            > .products2__card__price{
+                font-family: 'Kanit', sans-serif;
+                font-size: 30px;
+                font-weight: bold;
+                color: $color1;
+            }
+            > .products2__boton {
+                margin-top: 10px;
+                @include button(300px, $colorPrincipal);
+                &:hover{
+                    background-color: #671897;
+                    transform: scale(1.1);
+                    transition: 0.8s;
+                    color: $color1;
+                }
+            }
+        &:hover{
+            transform: scale(1.1);
+            border: 1px solid $colorTerciario;
+            transition: 0.5s;
+            }
+    }
+
+
+}

@@ -1,0 +1,47 @@
+.values{
+    padding-top: 50px;
+    padding-bottom: 50px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    margin-bottom: 40px;
+    gap: 20px;
+    @media (max-width:500px){
+        justify-content: center;
+        margin: 20px;
+    }
+    > .index__card{
+        background-color: $colorPrincipal;
+        display:flex;
+        flex-direction: column;
+        align-content: center;
+        justify-content: center;
+        width: 300px;
+        border: solid 1px $colorTerciario;
+        border-radius: 8px;
+        padding: 30px;
+        gap: 10px;
+    }
+    > .card__img{
+        padding-left: 50px;
+        padding-right: 50px;
+        display: flex;
+        justify-content: center;
+        align-self: center;
+    }
+    h3{
+        font-family: 'Kanit', sans-serif;
+        font-size: 30px;
+        font-weight: bolder;
+        color: rgb(135, 72, 141);
+        align-self: center;
+    }
+    p{
+        font-family: 'Kanit', sans-serif;
+        color: rgb(255, 255, 255);
+        font-size: 20px;
+        align-items: center;
+        text-align: center;
+
+    }
+}

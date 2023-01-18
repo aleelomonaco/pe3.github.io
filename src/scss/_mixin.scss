@@ -1,0 +1,31 @@
+@mixin card ($background){
+    background-color: $background;
+    justify-content: center;
+    display:block;
+    width: 300px;
+    border-radius: 8px;
+    padding-top: 30px;
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-bottom: 30px;
+}
+@mixin h3($color){
+    padding-top: 10px;
+    text-align: center;
+    font-family: 'Kanit', sans-serif;
+    font-size: 30px;
+    font-weight: bolder;
+    color: $color;
+}
+@mixin button ($width, $color){
+    padding: 20px;
+    width: $width;
+    color: $color;
+    background-color: $colorTerciario;
+    border-style: none;
+    border-radius: 4px;
+    font-family: 'Kanit', sans-serif;
+    font-size: 24px;
+    font-weight:bolder;
+    justify-self:center;
+}

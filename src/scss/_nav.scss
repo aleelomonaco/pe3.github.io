@@ -1,0 +1,105 @@
+nav{
+    grid-area: nav;
+}
+.navindex{
+    display: flex;
+    justify-content:space-between;
+    width: 100%;
+    background-color: $colorPrincipal;
+    font-size: 24px;
+    font-family: Kanit, sans-serif;
+    align-content: center;
+    > .fa-bars{
+        color: $color1;
+        display: none;
+    }
+    > .fa-magnifying-glass{
+    display: none;
+    }
+}
+.logoindex{
+    max-height: 23px;
+    align-self: center;
+    margin-right: 40px;
+}
+.menu_horizontal{
+    list-style: none;
+    display: flex;
+    justify-content: end;
+    > li > a{
+        display: block;
+        padding: 25px 30px;
+        color: $color1;
+        text-decoration: none;
+    }
+    > li:hover{
+        background-color: #ac39f356;
+        border: 1px solid #AC39F3;
+        margin: 0px;
+        transition: 0.3s;
+        border-radius: 30px;
+    }
+    > li:hover > .menu_vertical{
+        display: block;
+        transition: 0.5s;
+    }
+}
+.menu_vertical{
+    position: absolute;
+    margin-top: 2px;
+    display: none;
+    list-style: none;
+    width: 180px;
+    background-color: #4F2C64;
+    border-radius: 8px;
+    > li > a{
+        display: block;
+        color: $color1;
+        padding: 15px 15px 15px 20px;
+        text-decoration: none;
+        transition: 0.5s;
+    }
+    > li:hover{
+        border-radius: 8px;
+        background-color: #ac39f3c7;
+    }
+}
+@media (max-width:984px){
+    .navindex > .fa-bars{
+        color: $color1;
+        font-size: 30px;
+        display: block;
+        padding: 20px;
+    }
+    .navindex > .fa-bars:hover + ul{
+        left: 0;
+    }
+    .navindex > ul:hover{
+        left: 0;
+    }
+    .navindex > .fa-magnifying-glass{
+        color: $color1;
+        font-size: 30px;
+        display: block;
+        padding: 20px;
+    }
+    .navindex > ul {
+        position: fixed;
+        flex-direction: column;
+        background-color: $colorPrincipal;
+        width: 300px;
+        height: 100vh;
+        justify-content: start;
+        padding-top: 60px;
+        left: -300px;
+        transition: 0.2s;
+    }
+    .logoindex{
+        position: static;
+        align-content: center;
+        margin-right: 0px;
+    }
+}
+.category_active{
+    font-weight: bolder;
+}

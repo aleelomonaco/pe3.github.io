@@ -1,0 +1,56 @@
+%h1{
+    color: $color1;
+    display: flex;
+    justify-content: center;
+    padding-top: 40px;
+    font-size: 70px;
+    @media (max-width:1000px){ 
+        font-size: 45px;
+        }
+    @media (max-width:700px){
+        font-size: 20px;
+    }    
+}
+%h2{        
+    color: $color1;
+    font-size: 40px;
+    text-align: center;
+}
+
+%button{
+    background-color: $colorTerciario;
+    border: 0;
+    color: white;
+    border-radius: 5px;
+    font-size: 20px;
+    margin-top: 40px;
+    font-family: Kanit, sans-serif;
+    justify-content: center;
+    max-width: 500px;
+}
+%card{
+    background-color: $colorSecundario;
+    justify-content: center;
+    display:block;
+    width: 300px;
+    border-radius: 8px;
+    padding-top: 30px;
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-bottom: 30px;
+    gap: 10px;
+    
+}
+%content{
+    background-color:$colorSecundario;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    border-radius: 16px;
+    max-width: 1400px;
+    padding: 60px;
+    margin: auto;
+    margin-bottom: 40px;
+    gap: 20px;
+}
+

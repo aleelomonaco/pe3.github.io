@@ -1,0 +1,178 @@
+
+.callcenter{
+    @extend %content;
+    max-width: 1200px;
+    > h2{
+        color: $color1;
+        font-size: 40px;
+        text-align: center;
+    }
+    > .callcenter_text{
+        color: $color1;
+        font-size: 20px;
+        font-weight: lighter;
+    }
+    > .callcenter_img{
+        background-image: url(../img/callcenter.jpg);
+        width: 1200px;
+        height: 600px;
+        background-size: cover;
+    }
+    @media (max-width:1100px){
+        .callcenter_img{
+            background-size:contain;
+            background-repeat: no-repeat;
+            width: 100%;
+            height: 250px;
+        }  
+        .callcenter_text{
+            max-width: 600px;
+        }
+    }
+}
+.corporate{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    background-color: $colorSecundario ;
+    border-radius: 10px;
+    padding: 60px;
+    max-width: 1200px;
+    margin: auto;
+    margin-bottom: 40px;
+    > .corporate__adress{
+        max-width: 1200px;
+        margin: auto;
+        margin-bottom: 40px;
+        border-radius: 10px;
+        display: grid;
+        gap: 10px;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr;
+        grid-template-areas: "corporate__map  corporate__map";
+        
+    }
+    h2{
+        color: $color1;
+        font-size: 30px;
+        margin-bottom: 30px;
+    }
+    p{
+        color: $color1;
+    }
+    > .corporate__map:nth-child(1){
+        grid-area: corporate__map;
+        max-width: 1200px;
+        justify-items: center;
+        padding-bottom: 10px;
+    }
+    > .corporate__text:nth-child(2){
+        grid-area: corporate__text;
+        color: $color1;
+        font-size: 18px;
+        font-family: 'Kanit', sans-serif;
+        font-weight: lighter;
+        max-width: 1200px;
+        text-align: start;
+    }
+    .map{
+        width: 100%;
+        max-width: 1200px;
+        height: 400px;
+        border-style: none;
+        padding-right: 20px;
+    }
+}
+
+.form_contact{
+    padding: 60px;
+    background-color: $colorSecundario;
+    max-width: 1200px;
+    margin: 10px auto;
+    margin-bottom: 40px;
+    border-radius: 10px;
+    display: grid;
+    gap: 10px;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 80px;
+    grid-template-areas: "titulo   titulo"
+                         "nomApell email"
+                         "tel      asunto"
+                         "mensaje  mensaje"
+                         "...      btn";
+                
+            > label{
+            display: flex;
+            flex-direction: column;
+            justify-items: center;
+            gap: 10px;
+            color: $color1;
+            > input{
+                padding-left: 10px;
+                color: $colorPrincipal;
+                border-radius: 4px;
+                font-family: 'Quicksand', sans-serif;
+                height: 40px;
+                max-width: 550px;
+            }
+            > input , .formulario > label >textarea {
+                background-color: rgba(255, 255, 255, 0.349);
+                border: 0;
+            }
+            > textarea{
+                background-color: rgba(255, 255, 255, 0.349);
+                height: 60px;
+                width: 100%;
+                max-width: 1150px;
+                border-radius: 4px;
+            }            
+            }
+            .contact_button > button{
+                @include button(400px, white)
+            }
+}
+@media(max-width:700px){
+        .form_contact{
+            border-radius: 0;
+            grid-template-columns: 1fr;
+            grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 80px;
+            grid-template-areas: "titulo"
+                                "nomApell" 
+                                "email"
+                                "tel"      
+                                "asunto"
+                                "mensaje"  
+                                "btn"
+                                ;
+    }
+}
+.form_contact h2:nth-child(1){
+    grid-area: titulo;
+    color: $color1;
+    font-size: 30px;
+}
+
+.form_contact label:nth-child(2){
+    grid-area: nomApell;
+}
+
+.form_contact label:nth-child(3){
+    grid-area: email;
+}
+
+.form_contact label:nth-child(4){
+    grid-area: tel;
+}
+.form_contact label:nth-child(5){
+    grid-area: asunto;
+}
+.form_contact label:nth-child(6){
+    grid-area: mensaje;
+}
+.form_contact button:nth-child(7){
+    grid-area: btn;
+    @extend %button;
+}
+
+
+

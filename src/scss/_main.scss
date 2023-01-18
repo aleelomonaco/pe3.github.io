@@ -1,0 +1,38 @@
+/*Index*/
+main{
+    grid-area: main;
+    display: block;
+    > .img_main{    
+        margin: auto;
+        max-width: 1960px;
+        justify-items: center;
+        > img{
+            width: 100%;
+            justify-self: center;
+        }
+        @media (max-width:1200px){
+                background-size:contain;
+                background-repeat: no-repeat;
+        }
+        @media (max-width:700px){
+                background-size: contain;
+                background-repeat: no-repeat;
+            }
+    }
+    > h1{ 
+        @extend %h1;
+    }
+    > h2{
+        color: $color1;
+        display: flex;
+        justify-content: center;
+        padding: 20px;
+        font-size: 60px;
+        @media (max-width:1000px){ 
+            font-size: 45px;
+            }
+        @media (max-width:700px){
+            font-size: 20px;
+        }    
+    }
+}
